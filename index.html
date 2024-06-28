@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code 39 Barcode on Image</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Code 39 Barcode on Image</h1>
+        <form id="barcodeForm">
+            <label for="barcodeInput">Enter text or numbers:</label>
+            <input type="text" id="barcodeInput" required>
+            <button type="submit">Generate Barcode</button>
+        </form>
+        <canvas id="canvas" width="500" height="500"></canvas>
+        <button id="downloadBtn">Download Image</button>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
