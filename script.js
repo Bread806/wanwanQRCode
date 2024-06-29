@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
         const image = new Image();
-        image.src = 'wan_resize.png';  // 這裡是你圖片的路徑
+        image.src = './res/wan_resize.png';  // 這裡是你圖片的路徑
 
         image.onload = function() {
             // 清空 canvas
