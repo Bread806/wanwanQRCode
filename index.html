@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Code 39 Barcode on Image</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -17,7 +17,11 @@
         <canvas id="canvas" width="500" height="500"></canvas>
         <button id="downloadBtn">Download Image</button>
     </div>
+    <img src="./res/00.jpg" class="floating-image" style="top: 10%; left: 10%;">
+    <img src="./res/01.jpg" class="floating-image" style="top: 50%; left: 30%;">
+    <img src="./res/02.jpg" class="floating-image" style="top: 30%; left: 50%;">
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
     <script src="script.js"></script>
+    <script src="animation.js"></script>
 </body>
 </html>
