@@ -3,23 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code 39 Barcode on Image</title>
+    <title>縣長載具條碼產生器💋</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Code 39 Barcode on Image</h1>
+        <h1>縣長載具條碼產生器💋</h1>
+        <h3>step 1 : 輸入自己的載具號碼（包含/） <br> step 2 : 按下「製作圖片」 <br> step 3 : 喝杯咖啡等待圖片製作☕️ <br> step 4 : 按下「下載圖片」或右鍵儲存圖片</h3>
         <form id="barcodeForm">
-            <label for="barcodeInput">Enter text or numbers:</label>
-            <input type="text" id="barcodeInput" required>
-            <button type="submit">Generate Barcode</button>
+            <label for="barcodeInput">輸入你的載具號碼:</label>
+            <input type="text" id="barcodeInput" value="/" required>
+            <button type="submit">製作圖片</button>
         </form>
         <canvas id="canvas" width="500" height="500"></canvas>
-        <button id="downloadBtn">Download Image</button>
+        <div class="download-container">
+            <button id="downloadBtn">下載圖片</button>
+        </div>
     </div>
     <img src="./res/00.jpg" class="floating-image" style="top: 10%; left: 10%;">
     <img src="./res/01.jpg" class="floating-image" style="top: 50%; left: 30%;">
     <img src="./res/02.jpg" class="floating-image" style="top: 30%; left: 50%;">
+    
+    <!-- Footer -->
+    <footer>
+        <p>Powered by <a href="https://github.com/Bread806" target="_blank">Bread806</a></p>
+        <p>Special thanks to <a href="https://x.com/wanwan_voice" target="_blank">晚晚</a>、<a href="https://x.com/russel053" target="_blank">神楽坂宇軒</a>、<a href="https://x.com/Areka030" target="_blank">Areka</a></p>
+    </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
     <script src="script.js"></script>
     <script src="animation.js"></script>

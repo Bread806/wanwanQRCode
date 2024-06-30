@@ -1,122 +1,95 @@
 body {
+    margin: 0;
+    padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
-    overflow: hidden;
+    flex-direction: column;
+    min-height: 100vh; /* 確保 body 占滿整個視窗高度 */
+    background-image: url('res/BG.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+a{
+    color: #B1AFFF
 }
 
 .container {
     text-align: center;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.9);
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    margin: 20px auto; /* 使容器居中，並增加上下間距 */
+    z-index: 10; /* 確保 container 在較高層次 */
 }
-
-#qrcode {
-    margin-top: 20px;
-}
-
 
 .floating-image {
     position: absolute;
-    width: 200px;  /* resize */
-    opacity: 1;    /* 透明度 */
-    transition: opacity 0.5s; /* 平滑透明度過渡 */
+    width: 15%;
+    opacity: 1;
+    transition: opacity 0.5s;
+    z-index: 1; /* 確保 container 在較高層次 */
 }
 
-
-
-/* .floating-image {
-    position: absolute;
-    width: 200px;  
-    bottom: -20%;  
-    animation: float 30s linear infinite;  
+#downloadBtn {
+    display: none;
+    margin-top: 20px;
 }
-.floating-image-slow{
-    position: absolute;
-    width: 200px;  
-    bottom: -20%;  
-    animation: float-slow 45s linear infinite;   
+
+.download-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }
-.floating-image-meduim{
-    position: absolute;
-    width: 200px;  
-    bottom: -20%;  
-    animation: float-medium 30s linear infinite;   
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto; /* 將footer推到頁面底部 */
+    z-index: 5; /* 確保 container 在較高層次 */
 }
-.floating-image-fast{
-    position: absolute;
-    width: 200px;  
-    bottom: -20%; 
-    animation: float-fast 20s linear infinite;   
-} */
 
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 15px;
+    }
 
-/* @keyframes float {
-    0%, 100% {
-        transform: translateY(100vh);  
-        opacity: 0;
-    }
-    5%, 95% {
-        opacity: 1;
-    }
-    50% {
-        transform: translateY(-100vh);  
-    }
-} 
-
-
-@keyframes float-slow {
-    0%, 100% {
-        transform: translate(0, 100vh) rotate(0deg);
-        opacity: 0;
-    }
-    25% {
-        transform: translate(-50vw, 50vh) rotate(90deg);
-    }
-    50% {
-        transform: translate(0, -100vh) rotate(180deg);
-        opacity: 1;
-    }
-    75% {
-        transform: translate(50vw, 50vh) rotate(270deg);
+    #canvas {
+        width: 100%;
+        height: auto;
     }
 }
 
-@keyframes float-medium {
-    0%, 100% {
-        transform: translate(0, 100vh) rotate(0deg);
-        opacity: 0;
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+        padding: 10px;
     }
-    25% {
-        transform: translate(-30vw, 30vh) rotate(90deg);
+
+    h1 {
+        font-size: 1.5em;
     }
-    50% {
-        transform: translate(0, -100vh) rotate(180deg);
-        opacity: 1;
+
+    label {
+        display: block;
+        margin-bottom: 10px;
     }
-    75% {
-        transform: translate(30vw, 30vh) rotate(270deg);
+
+    #barcodeInput {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
     }
 }
-
-@keyframes float-fast {
-    0%, 100% {
-        transform: translate(0, 100vh) rotate(0deg);
-        opacity: 0;
-    }
-    25% {
-        transform: translate(-20vw, 20vh) rotate(90deg);
-    }
-    50% {
-        transform: translate(0, -100vh) rotate(180deg);
-        opacity: 1;
-    }
-    75% {
-        transform: translate(20vw, 20vh) rotate(270deg);
-    }
-} */

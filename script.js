@@ -2,13 +2,28 @@ document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('barcodeForm').addEventListener('submit', function(e) {
         e.preventDefault();  // 阻止表單默認提交
         const text = document.getElementById('barcodeInput').value.trim();  // 獲取用戶輸入並去除首尾空格
-        
-        // if (!text) {
-        //     alert("Please enter some text.");  // 輸入為空時彈出提示
-        //     return;
-        // }
+        const validCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-. *$/+%";
 
-        // alert("You entered: " + text);  // 彈出對話框顯示輸入資料
+        for (let i=0;i<text.length;i++){
+            if(!validCharacters.includes(text[i])){
+                alert("輸入含有非法字元");
+                document.getElementById('barcodeInput').value = "";
+                return false;
+            }
+        }
+
+        if (text.length != 8){
+            alert("輸入的條碼長度不符");
+            document.getElementById('barcodeInput').value = "";
+            return false;
+        }
+
+        else if (text[0] != '/'){
+            alert("請以 / 開頭");
+            document.getElementById('barcodeInput').value = "";
+            return false;
+        }
+        
 
         const canvas = document.getElementById('canvas');
         const ctx = canvas.getContext('2d');
@@ -42,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 const barcodeX = canvas.width / 10 + 25;  // 條碼 X 坐標
                 const barcodeY = canvas.height *2/3 ; // 條碼 Y 坐標
                 ctx.drawImage(barcodeImage, barcodeX, barcodeY);
+
+                document.getElementById('downloadBtn').style.display = 'block';
+            
             };
         };
     });
