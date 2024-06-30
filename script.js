@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const barcodeCanvas = document.createElement('canvas');
             JsBarcode(barcodeCanvas, text, {
                 format: "CODE39",
-                lineColor: "#402B3A",
+                lineColor: "#953636d9",
                 width: 2,
                 height: 80,
                 displayValue: false,
